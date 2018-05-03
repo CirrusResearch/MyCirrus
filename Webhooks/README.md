@@ -57,6 +57,7 @@ When you recieve a webhook request from Optimus Cloud it includes the message in
   "text": "Webhook test message from Optimus Cloud",
   "icon": "https://optimus-cloud.co.uk/images/webhook-icon.png",
   "name": "Optimus Cloud",
+  "instrument": "Test",
   "raw": null
 }
 ```
@@ -72,6 +73,7 @@ If you want to access more detailed information about the notification the **raw
   "text": "G123456: Noise Alert '85dB 1s' 03/05/2018 11:37:13",
   "icon": "https://optimus-cloud.co.uk/images/webhook-icon.png",
   "name": "Optimus Cloud",
+  "instrument": "G123456",
   "raw": {
     "Time": "2018-05-03T11:37:13",
     "Name": "85dB 1s"
