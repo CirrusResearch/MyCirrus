@@ -1,12 +1,13 @@
 # Webhook Notifications
 
-Optimus Cloud can send notifications from instruments to many destinations including services that support Webhooks.
+MyCirrus can send notifications from instruments to many destinations including services that support Webhooks.
 
 ## Supported Formats
-* Slack
-* Microsoft Teams
-* Discord
-* Custom
+
+- Slack
+- Microsoft Teams
+- Discord
+- Custom
 
 If you would like us to add support for another service please post an issue here or contact support via email.
 
@@ -18,7 +19,7 @@ If you would like us to add support for another service please post an issue her
 2. Choose an existing channel or create a new one.
 3. Click **Add Incoming WebHooks Integration**.
 4. Copy the **Webhook URL**.
-5. Go to the [Webhooks](https://optimus-cloud.co.uk/notifications-webhook) page in Optimus Cloud.
+5. Go to the [Webhooks](https://mycirrus.cloud/notifications-webhook) page in MyCirrus.
 6. Paste in the **URL**, choose **Slack** and click **Add**.
 
 ### Microsoft Teams
@@ -29,7 +30,7 @@ If you would like us to add support for another service please post an issue her
 4. Enter a name for the webhook and click **Create**.
 5. Copy the **Webhook URL**.
 6. Click **Done**.
-7. Go to the [Webhooks](https://optimus-cloud.co.uk/notifications-webhook) page in Optimus Cloud.
+7. Go to the [Webhooks](https://mycirrus.cloud/notifications-webhook) page in MyCirrus.
 8. Paste in the **URL**, choose **Teams** and click **Add**.
 
 ### Discord
@@ -40,9 +41,8 @@ If you would like us to add support for another service please post an issue her
 4. Choose the channel where messages will be posted and set the name.
 5. Copy the **Webhook URL**.
 6. Click **Done**.
-7. Go to the [Webhooks](https://optimus-cloud.co.uk/notifications-webhook) page in Optimus Cloud.
+7. Go to the [Webhooks](https://mycirrus.cloud/notifications-webhook) page in MyCirrus.
 8. Paste in the **URL**, choose **Discord** and click **Add**.
-
 
 ## Custom Format
 
@@ -50,13 +50,13 @@ If you are making your own webhook service or using it with a service not listed
 
 ### Basics
 
-When you recieve a webhook request from Optimus Cloud it includes the message in JSON format as shown below.
+When you recieve a webhook request from MyCirrus it includes the message in JSON format as shown below.
 
 ```json
 {
-  "text": "Webhook test message from Optimus Cloud",
-  "icon": "https://optimus-cloud.co.uk/images/webhook-icon.png",
-  "name": "Optimus Cloud",
+  "text": "Webhook test message from MyCirrus",
+  "icon": "https://mycirrus.cloud/images/webhook-icon.png",
+  "name": "MyCirrus",
   "instrument": "Test",
   "raw": null
 }
@@ -71,8 +71,8 @@ If you want to access more detailed information about the notification the **raw
 ```json
 {
   "text": "G123456: Noise Alert '85dB 1s' 03/05/2018 11:37:13",
-  "icon": "https://optimus-cloud.co.uk/images/webhook-icon.png",
-  "name": "Optimus Cloud",
+  "icon": "https://mycirrus.cloud/images/webhook-icon.png",
+  "name": "MyCirrus",
   "instrument": "G123456",
   "raw": {
     "Time": "2018-05-03T11:37:13",
@@ -83,6 +83,6 @@ If you want to access more detailed information about the notification the **raw
 
 The actual contents depend on the type of trigger and instrument used but it will contain at least the Time, Name and Instrument.
 
-*The **raw** property is not available when using the Test button on the website*
+_Note: The **raw** property is not available when using the Test button on the website_
 
 If you have any questions or problems post an issue here or contact support via email.

@@ -1,10 +1,11 @@
-# Optimus-Cloud
+# MyCirrus
 
-This repository contains documentation and examples for use with Optimus Cloud and NoiseTools.
+This repository contains documentation and examples for use with MyCirrus and NoiseTools.
 
-https://optimus-cloud.co.uk
+https://mycirrus.cloud
 
 ## Topics
-* [Webhook Notifications](Webhooks/README.md)
+
+- [Webhook Notifications](Webhooks/README.md)
 
 If you have any questions or problems post an issue here or contact support via email.
