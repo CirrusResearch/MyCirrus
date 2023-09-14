@@ -1,0 +1,14 @@
+{
+  "name": "mycirrus-api-example",
+  "version": "1.0.0",
+  "description": "Example of using the MyCirrus API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cirrus Research plc",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0"
+  }
+}
