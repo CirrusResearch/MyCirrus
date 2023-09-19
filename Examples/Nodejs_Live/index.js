@@ -45,6 +45,7 @@ ws.on('open', function open() {
 
 // this runs once the connection is closed
 ws.on('close', function close(code, reason) {
+  // check the reason if the server closed the connection
   console.log('Disconnected: ' + reason.toString());
 
   process.exit();

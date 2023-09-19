@@ -11,21 +11,31 @@ Example code can be found in this repository and full documentation is available
 
 https://docs.mycirrus.cloud
 
+To access the API you will need to generate an API key from the [MyCirrus](https://mycirrus.cloud/api) website.
+
 ### Examples
 
 Basic Node.js client
-
 - Simple client application that uses Node.js to access the main API (REST)
 - [View Code](Examples/Nodejs_Basic)
 
 Live Node.js client
-
 - Simple client application that uses Node.js to access the live API (WebSocket)
 - [View Code](Examples/Nodejs_Live)
+
+Basic C# client
+- Simple client application that uses C# to access the main API (REST)
+- [View Code](Examples/CSharp_Basic)
+
+Live C# client
+- Simple client application that uses C# to access the live API (WebSocket)
+- [View Code](Examples/CSharp_Live)
 
 ## Notifications
 
 Notifications can be sent to Email, SMS, the mobile app or Webhooks.
+
+These are part of the original notification system that was available before the API was released.
 
 - [Webhook Notifications](Webhooks/README.md)
 

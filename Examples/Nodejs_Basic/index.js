@@ -6,13 +6,15 @@ const axios = require('axios');
 const url = 'https://api.mycirrus.cloud/v1'; // MyCirrus API URL
 const key = '<YOUR_API_KEY>' // Your API key
 
+axios.defaults.headers.common['X-Api-Key'] = key; // set the api key for all requests
+
 // run the example
 runExample();
 
 async function runExample() {
   try {
     // first get the list of instruments
-    const response = await axios.get(url + '/control/instruments', { headers: { 'X-Api-Key': key } });
+    const response = await axios.get(url + '/control/instruments');
 
     // print the list of instruments
     console.log('Instruments:');
@@ -23,7 +25,7 @@ async function runExample() {
     const serial = response.data[0].serialNumber;
 
     // now get the instrument status
-    const response2 = await axios.get(url + '/control/instruments/' + serial + '/status', { headers: { 'X-Api-Key': key } });
+    const response2 = await axios.get(url + '/control/instruments/' + serial + '/status');
 
     // print the status
     console.log('Status of ' + serial + ':');
@@ -37,8 +39,7 @@ async function runExample() {
         start: new Date(new Date().setHours(0, 0, 0, 0)).toISOString(),
         end: new Date(new Date().setHours(24, 0, 0, 0)).toISOString(),
         values: 'LAeq,LCPeak,LAFmax', // only return these values from each measurement
-      },
-      headers: { 'X-Api-Key': key }
+      }
     });
 
     // print the measurements
