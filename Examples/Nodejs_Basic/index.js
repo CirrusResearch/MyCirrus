@@ -44,6 +44,7 @@ async function runExample() {
     console.log('Measurements for ' + serial + ':');
     console.log(measurements);
 
+    
     // finished
     console.log('Finished');
 

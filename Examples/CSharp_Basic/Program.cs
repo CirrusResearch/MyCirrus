@@ -13,8 +13,11 @@ try
 {
     // First, get the list of instruments
     var response = await client.GetStringAsync($"{Url}/control/instruments");
+
+    // print the list of instruments
     Console.WriteLine("Instruments:");
     Console.WriteLine(response);
+
 
     // Get the serial number of the first instrument
     var instruments = JsonSerializer.Deserialize<Instrument[]>(response, new JsonSerializerOptions(JsonSerializerDefaults.Web));
@@ -22,18 +25,28 @@ try
 
     // Now get the instrument status
     var statusResponse = await client.GetStringAsync($"{Url}/control/instruments/{serial}/status");
+
+    // print the status
     Console.WriteLine($"Status of {serial}:");
     Console.WriteLine(statusResponse);
+
 
     // Get today's measurements for this instrument
     var startDateTime = DateTime.UtcNow.Date;
     var endDateTime = startDateTime.AddDays(1);
 
     var measurementsResponse = await client.GetStringAsync($"{Url}/data/noise/measurements?instruments={serial}&start={startDateTime:O}&end={endDateTime:O}&values=LAeq,LCPeak,LAFmax");
+
+    // print the measurements
     Console.WriteLine($"Measurements for {serial}:");
     Console.WriteLine(measurementsResponse);
 
+
+    // finished
     Console.WriteLine("Finished");
+
+    // see the api documentation for details on other endpoints and their usage
+
 }
 catch (HttpRequestException ex)
 {

@@ -25,6 +25,7 @@ try
     // Setup keepalive
     _ = KeepAplive(ws);
 
+
     // Start live data
     //   comment this to avoid spamming the console when testing other commands
     Console.WriteLine("Starting Live Data");
@@ -35,6 +36,7 @@ try
     //await SendJson(ws, new { action = "Identify" });
     //await SendJson(ws, new { action = "Calibration" });
     //await SendJson(ws, new { action = "SIC" });
+
 
     // Stop live data after 4 minutes
     await Task.Delay(TimeSpan.FromMinutes(4));
@@ -53,6 +55,7 @@ catch (Exception ex)
 
 async Task SendJson(ClientWebSocket ws, object data)
 {
+    // convert and send the message
     var json = JsonSerializer.Serialize(data);
     var buffer = Encoding.UTF8.GetBytes(json);
     await ws.SendAsync(buffer, WebSocketMessageType.Text, true, CancellationToken.None);
@@ -60,6 +63,7 @@ async Task SendJson(ClientWebSocket ws, object data)
 
 async Task ReceiveMessages(ClientWebSocket ws)
 {
+    // Receive messages until the websocket is closed
     while (ws.State == WebSocketState.Open)
     {
         var buffer = new byte[1024];
@@ -68,6 +72,8 @@ async Task ReceiveMessages(ClientWebSocket ws)
         if (result.MessageType == WebSocketMessageType.Text)
         {
             var json = Encoding.UTF8.GetString(buffer, 0, result.Count);
+
+            // Process the new message
             HandleIncomingMessage(json);
         }
     }

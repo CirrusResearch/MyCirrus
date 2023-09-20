@@ -20,6 +20,7 @@ ws.on('open', function open() {
     ws.send('{ "action":"KeepAlive" }');
   }, 30 * 1000);
 
+  
   // start live data
   //   comment this to avoid spamming the console when testing other commands
   console.log('Starting Live Data');
@@ -30,6 +31,7 @@ ws.on('open', function open() {
   //ws.send('{ "action":"Identify" }');
   //ws.send('{ "action":"Calibration" }');
   //ws.send('{ "action":"SIC" }');
+
 
   // stop live data after 4 minutes
   setTimeout(function stoplive() {
