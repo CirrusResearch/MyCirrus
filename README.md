@@ -11,7 +11,7 @@ Example code can be found in this repository and full documentation is available
 
 https://docs.mycirrus.cloud
 
-To access the API you will need to generate an API key from the [MyCirrus](https://mycirrus.cloud/api) website.
+To access the API you will need to generate an API key from the [MyCirrus](https://mycirrus.cloud/developer-api) website.
 
 ### Examples
 
